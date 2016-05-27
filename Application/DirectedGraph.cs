@@ -17,11 +17,18 @@ namespace Application
         /// </summary>
         List<Vertex> DirGraph { get; set; }
 
+        public DirectedGraph(Vertex vertex)
+        {
+            DirGraph = new List<Vertex>();
+
+        }
+
         /// <summary>
         /// Конструктор, который инициализирует пустой граф с заданным количеством вершин.
         /// </summary>
         public DirectedGraph(int VertexNum)
         {
+            DirGraph = new List<Vertex>();
             for (int i = 0; i < VertexNum; i++)
             {
                 DirGraph.Add(new Vertex());
@@ -73,7 +80,7 @@ namespace Application
         }
 
         /// <summary>
-        /// Итератор, реализующий перебор путей у заданной вершины вершины.
+        /// Итератор, реализующий перебор путей у заданной вершины.
         /// </summary>
         public IEnumerable BustPath(int VertexNumber)
         {
