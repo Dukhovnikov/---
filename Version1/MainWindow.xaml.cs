@@ -27,8 +27,12 @@ namespace Version1
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
+            //gr.setTestGraphThird();
+            gr.setTestGraphFifth();
             getValueWays();
             getValueCycle();
+            getDisjoinCycle();
+            getValueDeterminatn();
         }
     }
 }

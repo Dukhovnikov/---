@@ -37,5 +37,25 @@ namespace Version1
                 textBoxCycles.Text += Environment.NewLine;
             }
         }
+
+        private void getDisjoinCycle()
+        {
+            List<List<Track>> DisjoinCycle = gr.getDisjointCycle(gr.getCycle());
+
+            foreach (List<Track> item in DisjoinCycle)
+            {
+                foreach (Track temp in item)
+                {
+                    if (temp == item.Last()) textBoxDisjointCycle.Text += temp.PF;
+                    else textBoxDisjointCycle.Text += temp.PF + " ->";
+                }
+                textBoxDisjointCycle.Text += Environment.NewLine;
+            }
+        }
+
+        private void getValueDeterminatn()
+        {
+            textBoxDeterminant.Text = gr.getDeterminantGraph();
+        }
     }
 }
