@@ -34,5 +34,15 @@ namespace Version1
                 OrGraph.GetDifrent(graph.getCycle, 2);
             }
         }
+
+        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+        
+        }
+
+        private void textBox_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
