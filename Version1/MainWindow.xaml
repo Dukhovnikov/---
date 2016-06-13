@@ -47,5 +47,6 @@
         <GroupBox x:Name="groupBoxCycles" Header="Циклы графа" HorizontalAlignment="Left" Margin="10,415,0,0" VerticalAlignment="Top" Height="100" Width="285">
             <TextBox x:Name="textBoxCycles" TextWrapping="Wrap" Text=""/>
         </GroupBox>
+        <TextBox x:Name="textBoxDeterminant" HorizontalAlignment="Left" Height="111" Margin="10,604,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="545"/>
     </Grid>
 </Window>

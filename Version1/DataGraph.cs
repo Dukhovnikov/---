@@ -98,5 +98,24 @@ namespace Version1
 
             return new OrGraph(Points, Points[0], Points[7]);
         }
+        public static OrGraph setTestGraphSixth()
+        {
+            List<Vertex> Points = new List<Vertex>();
+            for (int i = 0; i < 7; i++) Points.Add(new Vertex(i.ToString()));
+
+            new Track(Points[0], Points[1], "1");
+            new Track(Points[1], Points[2], "W1");
+            new Track(Points[2], Points[3], "W4");
+            new Track(Points[2], Points[1], "W2");
+            new Track(Points[3], Points[2], "W3");
+            new Track(Points[5], Points[2], "W5");
+            new Track(Points[5], Points[6], "1");
+            new Track(Points[2], Points[5], "W6");
+            new Track(Points[4], Points[2], "W7");
+            new Track(Points[2], Points[4], "W8");
+
+
+            return new OrGraph(Points, Points[0], Points[6]);
+        }
     }
 }

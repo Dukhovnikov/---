@@ -13,6 +13,7 @@ namespace Version1
         /// </summary>
         /// <remarks>Пути спрятаны в вершинах.</remarks>
         List<Vertex> Points { get; set; }
+
         /// <summary>
         /// Начальная вершина графа.
         /// </summary>
@@ -156,10 +157,26 @@ namespace Version1
             }
             return false;
         }
+        public List<DataSet[]> DisjoinCycles
+        {
+            get
+            {
+                List<DataSet[]> disjoinCycles = new List<DataSet[]>();
+                int k = 2;
+                while (GetDifrent(getCycle,k).Count != 0)
+                {
+                    foreach (var item in GetDifrent(getCycle, k++))
+                    {
+                        disjoinCycles.Add(item);
+                    }
+                }
+                return disjoinCycles;
+            }
+        }
         //List<track> - цыкл
         //List<List<track>> - список цыклов
         //List<List<track>[]> - список циклов без повторений вершин 
-        public static List<DataSet[]> GetDifrent(List<DataSet> Cycles, int k)
+        List<DataSet[]> GetDifrent(List<DataSet> Cycles, int k)
         {
             List<DataSet[]> Res = new List<DataSet[]>();
             for (int i = 0; i < Cycles.Count; i++)
@@ -169,8 +186,7 @@ namespace Version1
             }
             return Res;
         }
-
-        static List<DataSet[]> DC(List<DataSet> Cycles, int k, List<DataSet> cur, int j)
+        List<DataSet[]> DC(List<DataSet> Cycles, int k, List<DataSet> cur, int j)
         {
             if (cur.Count == k)
                 return new List<DataSet[]> { cur.ToArray() };

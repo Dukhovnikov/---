@@ -64,7 +64,7 @@ namespace Version1
             switch (tabControlGraphData.SelectedIndex)
             {
                 case 0: return DataGraph.setTestGraphFirst();
-                case 1: return DataGraph.setTestGraphSecond();
+                case 1: return DataGraph.setTestGraphSixth();
                 case 2: return DataGraph.setTestGraphThird();
                 case 3: return DataGraph.setTestGraphForth();
                 case 4: return DataGraph.setTestGraphFifth();

@@ -31,7 +31,18 @@ namespace Version1
             {
                 SetWaysValueText();
                 SetCyclesValuesText();
-                OrGraph.GetDifrent(graph.getCycle, 2);
+                //OrGraph.GetDifrent(graph.getCycle, 2);
+                //DataSet.JoinPath(graph.getWays, graph.getCycle);
+                AlgorithmMason Maison = new AlgorithmMason(graph);
+
+                foreach (var item in Maison.Maison())
+                {
+                    textBoxDeterminant.Text += item + Environment.NewLine;
+                }
+                //textBoxDeterminant.Text = Maison.Maison()[1] + Environment.NewLine;
+
+
+
             }
         }
     }
