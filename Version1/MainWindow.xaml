@@ -5,13 +5,47 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Version1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="584.322" Width="525">
-    <Grid>
-        <TextBox x:Name="textBoxWays" HorizontalAlignment="Left" Height="100" Margin="10,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="497"/>
-        <TextBox x:Name="textBoxCycles" HorizontalAlignment="Left" Height="100" Margin="10,140,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="497"/>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <TextBox x:Name="textBoxDisjointCycle" HorizontalAlignment="Left" Height="100" Margin="10,245,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="497"/>
-        <TextBox x:Name="textBoxDeterminant" HorizontalAlignment="Left" Height="100" Margin="10,350,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="497"/>
-
+        Title="Обработка графа" Height="756.322" Width="572.547">
+    <Grid Background="#FFD8CFCF">
+        <Button x:Name="button" Content="Рассчитать" HorizontalAlignment="Left" Margin="10,520,0,0" VerticalAlignment="Top" Width="75" Height="23" VerticalContentAlignment="Stretch" Background="#FFECE6E6" Click="button_Click_1"/>
+        <TabControl x:Name="tabControlGraphData" Height="305" VerticalAlignment="Top" Background="{x:Null}">
+            <TabItem Header="Пример 1">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="Resources/Граф 1.png"/>
+                    </Grid.Background>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Пример 2" Width="66">
+                <Grid/>
+            </TabItem>
+            <TabItem Header="Пример3" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="66">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="Resources/Граф 3.png"/>
+                    </Grid.Background>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Пример4" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="66">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="Resources/Граф 4.png"/>
+                    </Grid.Background>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Пример 5" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="Resources/Граф 5.png"/>
+                    </Grid.Background>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <GroupBox x:Name="groupBoxWays" Header="Пути графа" HorizontalAlignment="Left" Margin="10,310,0,0" VerticalAlignment="Top" Height="100" Width="285">
+            <TextBox x:Name="textBoxWays" TextWrapping="Wrap" Text=""/>
+        </GroupBox>
+        <GroupBox x:Name="groupBoxCycles" Header="Циклы графа" HorizontalAlignment="Left" Margin="10,415,0,0" VerticalAlignment="Top" Height="100" Width="285">
+            <TextBox x:Name="textBoxCycles" TextWrapping="Wrap" Text=""/>
+        </GroupBox>
     </Grid>
 </Window>

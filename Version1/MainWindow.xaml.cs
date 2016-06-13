@@ -25,14 +25,14 @@ namespace Version1
             InitializeComponent();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void button_Click_1(object sender, RoutedEventArgs e)
         {
-            //gr.setTestGraphThird();
-            gr.setTestGraphFifth();
-            getValueWays();
-            getValueCycle();
-            getDisjoinCycle();
-            getValueDeterminatn();
+            if ((graph = SetGraph()) != null)
+            {
+                SetWaysValueText();
+                SetCyclesValuesText();
+                DataSet.getDisjointPath(graph.getCycle);
+            }
         }
     }
 }
