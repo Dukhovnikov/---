@@ -24,25 +24,27 @@ namespace Version1
             this.data = new List<Track>(data);
         }
 
-        public static List<List<DataSet>> getDisjointPath(List<DataSet> Cycle, List<List<DataSet>> outDisjoinPath)
-        {
-            List<List<DataSet>> DisjoinPath = outDisjoinPath.ToList();
-            List<DataSet> CycleCopy = Cycle.ToList();
-            if (DisjoinPath.Count == 0) DisjoinPath.Add(new List<DataSet>() { Cycle[0] });
-            for (int i = 0; i < CycleCopy.Count; i++)
-            {
-                for (int j = i + 1 ; j < CycleCopy.Count; j++)
-                {
-                    if (Equals(CycleCopy[i], CycleCopy[j]))
-                    {
 
-                    }
-                        
-                }
+        #region Try
+        public static List<DataSet> JoinPath(List<DataSet> Ways ,List<DataSet> Cycle)
+        {
+            List<DataSet> DisjoinWays = new List<DataSet>();
+            foreach (DataSet item in Ways)
+            {
+                if (EqulasPath(Cycle, item)) DisjoinWays.Add(item);
+            }
+            return DisjoinWays;
+        }
+        public static List<DataSet> getDisjointPath(List<DataSet> Cycle)
+        {
+            List<DataSet> DisjoinPath = new List<DataSet>();
+            DisjoinPath.Add(Cycle[0]);
+            for (int i = 1; i < Cycle.Count; i++)
+            {
+                if (!EqulasPath(DisjoinPath, Cycle[i])) DisjoinPath.Add(Cycle[i]);
             }
             return DisjoinPath;
         }
-
         static bool Equals(DataSet ValueOne, DataSet ValueTwo)
         {
             foreach (Track item in ValueOne.data)
@@ -54,5 +56,14 @@ namespace Version1
             }
             return false;
         }
+        static bool EqulasPath(List<DataSet> Now, DataSet obj)
+        {
+            foreach (DataSet item in Now)
+            {
+                if (Equals(item, obj)) { return true; }
+            }
+            return false;
+        }
+        #endregion
     }
 }

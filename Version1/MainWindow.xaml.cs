@@ -31,7 +31,7 @@ namespace Version1
             {
                 SetWaysValueText();
                 SetCyclesValuesText();
-                DataSet.getDisjointPath(graph.getCycle);
+                OrGraph.GetDifrent(graph.getCycle, 2);
             }
         }
     }

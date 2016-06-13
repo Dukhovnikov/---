@@ -26,7 +26,6 @@ namespace Version1
         /// <summary>
         /// Получить пути графа.
         /// </summary>
-        /// <returns></returns>
         public List<DataSet> getWays
         {
             get
@@ -149,6 +148,44 @@ namespace Version1
             return true;
         }
 
+        static bool AnySameRow(List<DataSet> Now, DataSet T1)
+        {
+            foreach (var f in T1.data)
+            {
+                if (Now.Any((a) => a.data.Any((b) => b.end == f.end))) return true;
+            }
+            return false;
+        }
+        //List<track> - цыкл
+        //List<List<track>> - список цыклов
+        //List<List<track>[]> - список циклов без повторений вершин 
+        public static List<DataSet[]> GetDifrent(List<DataSet> Cycles, int k)
+        {
+            List<DataSet[]> Res = new List<DataSet[]>();
+            for (int i = 0; i < Cycles.Count; i++)
+            {
+                var check = new List<DataSet>() { Cycles[i] };
+                Res.AddRange(DC(Cycles, k, check, i));
+            }
+            return Res;
+        }
+
+        static List<DataSet[]> DC(List<DataSet> Cycles, int k, List<DataSet> cur, int j)
+        {
+            if (cur.Count == k)
+                return new List<DataSet[]> { cur.ToArray() };
+            List<DataSet[]> rez = new List<DataSet[]>();
+            for (int i = j + 1; i < Cycles.Count; i++)
+            {
+                if (!AnySameRow(cur, Cycles[i]))
+                {
+                    var newCur = cur.ToList();
+                    newCur.Add(Cycles[i]);
+                    rez.AddRange(DC(Cycles, k, newCur, i));
+                }
+            }
+            return rez;
+        }
         public OrGraph(List<Vertex> Points, Vertex begin, Vertex end)
         {
             this.Points = Points;
