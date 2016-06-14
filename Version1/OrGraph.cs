@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Version1
 {
+    /// <summary>
+    /// Класс, представляющий собой ОрГраф в памяти машины.
+    /// </summary>
     class OrGraph
     {
         /// <summary>
@@ -149,6 +152,9 @@ namespace Version1
             return true;
         }
 
+        /// <summary>
+        /// Сравнивает циклы графа на их пересечение.
+        /// </summary>
         static bool AnySameRow(List<DataSet> Now, DataSet T1)
         {
             foreach (var f in T1.data)
@@ -157,6 +163,10 @@ namespace Version1
             }
             return false;
         }
+
+        /// <summary>
+        /// Возвращает все множество несоприкасающихся циклов.
+        /// </summary>
         public List<DataSet[]> DisjoinCycles
         {
             get
@@ -173,9 +183,13 @@ namespace Version1
                 return disjoinCycles;
             }
         }
-        //List<track> - цыкл
-        //List<List<track>> - список цыклов
-        //List<List<track>[]> - список циклов без повторений вершин 
+
+        /// <summary>
+        /// Возвращает несоприкасающиеся контура. Список циклов без повторений вершин.
+        /// </summary>
+        /// <param name="Cycles">Список цыклов.</param>
+        /// <param name="k">Значение указывающее какоей количество несоприкасающихся вершин анализировать.</param>
+        /// <returns></returns>
         List<DataSet[]> GetDifrent(List<DataSet> Cycles, int k)
         {
             List<DataSet[]> Res = new List<DataSet[]>();
@@ -186,6 +200,15 @@ namespace Version1
             }
             return Res;
         }
+
+        /// <summary>
+        /// Возвращает пару несоприкасающихся контуров.
+        /// </summary>
+        /// <param name="Cycles">Список циклов.</param>
+        /// <param name="k">Сколько должно быть несоприкасающихся контуров.</param>
+        /// <param name="cur">Контура, которые уже записаны.</param>
+        /// <param name="j">С какого контура просматривать дальше.</param>
+        /// <returns></returns>
         List<DataSet[]> DC(List<DataSet> Cycles, int k, List<DataSet> cur, int j)
         {
             if (cur.Count == k)
@@ -202,6 +225,10 @@ namespace Version1
             }
             return rez;
         }
+
+        /// <summary>
+        /// Конструктор ОрГрафа для инициализации
+        /// </summary>
         public OrGraph(List<Vertex> Points, Vertex begin, Vertex end)
         {
             this.Points = Points;

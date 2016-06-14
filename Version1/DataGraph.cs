@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace Version1
 {
+    /// <summary>
+    /// Статический ксласс, задающий начальное значение ОрГрафа в памяти машины.
+    /// </summary>
     static class DataGraph
     {
+
         public static OrGraph setTestGraphFirst()
         {
             List<Vertex> Points = new List<Vertex>();

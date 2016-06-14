@@ -15,6 +15,7 @@ namespace Version1
         /// Вершины, которые начинаются из данного пути.
         /// </summary>
         public Vertex begin { get; set; }
+
         /// <summary>
         /// Вершины, которые заканчиваются из данного пути.
         /// </summary>

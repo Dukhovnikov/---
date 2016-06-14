@@ -59,7 +59,6 @@
     <Compile Include="AlgorithmMason.cs" />
     <Compile Include="DataGraph.cs" />
     <Compile Include="DataSet.cs" />
-    <Compile Include="Graph.cs" />
     <Compile Include="MainWindow.cs" />
     <Compile Include="OrGraph.cs" />
     <Compile Include="Track.cs" />
