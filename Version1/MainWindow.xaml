@@ -1,0 +1,98 @@
+﻿<Window x:Class="Version1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Version1"
+        mc:Ignorable="d"
+        Title="Обработка графа" Height="607.655" Width="572.547">
+    <Grid Background="#FFE2D2E4">
+        <Button x:Name="button" Content="Рассчитать" HorizontalAlignment="Left" Margin="224,537,0,0" VerticalAlignment="Top" Width="112" Height="27" VerticalContentAlignment="Stretch" Background="{x:Null}" Click="button_Click_1" FontSize="16" FontFamily="Showcard Gothic" ToolTip="Нажмите сюда, чтобы рассчитать ПФ по данному графу." HorizontalContentAlignment="Center" BorderBrush="#FF796C79" Foreground="#FF49354C" RenderTransformOrigin="0.336,0.716">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="9"/>
+            </Button.Effect>
+        </Button>
+        <TabControl x:Name="tabControlGraphData" Height="305" VerticalAlignment="Top" Background="{x:Null}">
+            <TabItem Header="Пример 1" Foreground="#FF726175">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="#FFD5BCD8" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="Resources/Граф 1.png"/>
+                    </Grid.Background>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Пример 2" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="66" Foreground="#FF726175">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="#FFD5BCD8" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid>
+                    <Grid>
+                        <Grid.Background>
+                            <ImageBrush ImageSource="Resources/Граф 2.png"/>
+                        </Grid.Background>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Пример 3" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="66" Foreground="#FF726175">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="#FFD5BCD8" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="Resources/Граф 3.png"/>
+                    </Grid.Background>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Пример 4" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Foreground="#FF726175">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="#FFD5BCD8" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="Resources/Граф 4.png"/>
+                    </Grid.Background>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Пример 5" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="66" Foreground="#FF726171">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="#FFD5BCD8" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="Resources/Граф 5.png"/>
+                    </Grid.Background>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <GroupBox x:Name="groupBoxWays" Header="Пути " HorizontalAlignment="Left" Margin="10,310,0,0" VerticalAlignment="Top" Height="100" Width="251" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14.667" Foreground="#FF836E86">
+            <TextBox x:Name="textBoxWays" TextWrapping="Wrap" Text="" FontSize="13.333" Foreground="#FF49354C"/>
+        </GroupBox>
+        <GroupBox x:Name="groupBoxCycles" Header="Циклы" HorizontalAlignment="Left" Margin="271,310,0,0" VerticalAlignment="Top" Height="100" Width="285" HorizontalContentAlignment="Center" Foreground="#FF836E86" FontSize="14.667">
+            <TextBox x:Name="textBoxCycles" TextWrapping="Wrap" Text="" FontWeight="Normal" FontSize="13.333" Foreground="#FF49354C" RenderTransformOrigin="-0.512,2.216"/>
+        </GroupBox>
+        <GroupBox x:Name="groupBox" Header="Передаточная функция" Margin="0,415,0,0" VerticalAlignment="Top" Height="112" FontSize="14.667" Foreground="#FF836E86">
+            <Grid Margin="0,0,0,0.333">
+                <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="W(S) =" VerticalAlignment="Top" Height="20"/>
+                <TextBox x:Name="textBoxNumerator" Height="32" Margin="67,10,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF49354C" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="12"/>
+                <TextBox x:Name="textBoxDenominator" Height="33" Margin="67,42,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF49354C" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="12"/>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>
