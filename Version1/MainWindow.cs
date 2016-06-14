@@ -8,57 +8,14 @@ namespace Version1
 {
     public partial class MainWindow
     {
-        //Graph gr = new Graph();
-
-        //private void getValueWays()
-        //{
-        //    List<List<Track>> myWays = gr.getWays().ToList();
-        //    foreach (List<Track> item in myWays)
-        //    {
-        //        foreach (Track temp in item)
-        //        {
-        //            if (temp == item.Last()) textBoxWays.Text += temp.PF;
-        //            else textBoxWays.Text += temp.PF + " ->";
-        //        }
-        //        textBoxWays.Text += Environment.NewLine;
-        //    }
-        //}
-
-        //private void getValueCycle()
-        //{
-        //    List<List<Track>> myCycle = gr.getCycle().ToList();
-        //    foreach (List<Track> item in myCycle)
-        //    {
-        //        foreach (Track temp in item)
-        //        {
-        //            if (temp == item.Last()) textBoxCycles.Text += temp.PF;
-        //            else textBoxCycles.Text += temp.PF + " ->";
-        //        }
-        //        textBoxCycles.Text += Environment.NewLine;
-        //    }
-        //}
-
-        //private void getDisjoinCycle()
-        //{
-        //    List<List<Track>> DisjoinCycle = gr.getDisjointCycle(gr.getCycle());
-
-        //    foreach (List<Track> item in DisjoinCycle)
-        //    {
-        //        foreach (Track temp in item)
-        //        {
-        //            if (temp == item.Last()) textBoxDisjointCycle.Text += temp.PF;
-        //            else textBoxDisjointCycle.Text += temp.PF + " ->";
-        //        }
-        //        textBoxDisjointCycle.Text += Environment.NewLine;
-        //    }
-        //}
-
-        //private void getValueDeterminatn()
-        //{
-        //    textBoxDeterminant.Text = gr.getDeterminantGraph();
-        //}
+        /// <summary>
+        /// Граф, заданный пользователем, в данной программе задается статически.
+        /// </summary>
         OrGraph graph;
 
+        /// <summary>
+        /// Инициализация графа, в зависимости от выбора пользователя.
+        /// </summary>
         private OrGraph SetGraph()
         {
             switch (tabControlGraphData.SelectedIndex)
@@ -73,6 +30,9 @@ namespace Version1
             }
         }
 
+        /// <summary>
+        /// Устанавливием значения всех путей в визуализированное окошко.
+        /// </summary>
         private void SetWaysValueText()
         {
             textBoxWays.Text = "";
@@ -82,6 +42,9 @@ namespace Version1
             }
         }
 
+        /// <summary>
+        /// Устанавливием значения всех контуров в визуализированное окошко.
+        /// </summary>
         private void SetCyclesValuesText()
         {
             textBoxCycles.Text = "";
@@ -89,6 +52,17 @@ namespace Version1
             {
                 textBoxCycles.Text += item.ToString() + Environment.NewLine;
             }
+        }
+
+        /// <summary>
+        /// Получение у установка передаточной функции графа.
+        /// </summary>
+        private void SetMaisonValue()
+        {
+            AlgorithmMason Maison = new AlgorithmMason(graph);
+            textBoxNumerator.Text = Maison.getNumerator();
+            textBoxDenominator.Text = Maison.getDenominator();
+
         }
     }
 }

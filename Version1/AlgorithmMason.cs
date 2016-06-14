@@ -13,6 +13,14 @@ namespace Version1
         {
             this.Graph = Graph;
         }
+        public string getNumerator()
+        {
+            return WayTransferFunction();
+        }
+        public string getDenominator()
+        {
+            return Determinant();
+        }
         public string[] Maison()
         {
             string[] TransferFunction = new string[2];
@@ -31,7 +39,7 @@ namespace Version1
             {
                 if ((temp = DataSet.WayWithoutCycles(Cycles, item)) != null)
                 {
-                    lineWay += "(" + item.ConvertToString() + ") * " + "( 1 " + (temp.Sign * -1 < 0 ? "-":"+") + " " + temp.Abs() + " )";
+                    lineWay += (temp.Sign * -1 < 0 ? "-" : "+") + "(" + item.ConvertToString() + ") * " + "( 1 " + (temp.Sign * -1 < 0 ? "-":"+") + " " + temp.Abs() + " )";
                 }
                 else
                 {

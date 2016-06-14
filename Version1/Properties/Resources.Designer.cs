@@ -63,9 +63,9 @@ namespace Version1.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Graph2 {
+        internal static System.Drawing.Bitmap Граф_1 {
             get {
-                object obj = ResourceManager.GetObject("Graph2", resourceCulture);
+                object obj = ResourceManager.GetObject("Граф_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace Version1.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Граф_1 {
+        internal static System.Drawing.Bitmap Граф_2 {
             get {
-                object obj = ResourceManager.GetObject("Граф_1", resourceCulture);
+                object obj = ResourceManager.GetObject("Граф_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
